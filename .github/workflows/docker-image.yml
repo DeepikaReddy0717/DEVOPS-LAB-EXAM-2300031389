@@ -1,4 +1,4 @@
-name: Ansible Fullstack CI
+name: Kubernetes Fullstack CI
 
 on:
   push:
@@ -29,12 +29,12 @@ jobs:
           context: ./springbootexamproject
           file: ./springbootexamproject/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ansible-labexam-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ansible-labexam-backend:latest:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
-          context: ./reactexamapp
+          context: .reactexamapp
           file: ./reactexamapp/frontend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ansible-labexam-frontend:latest
