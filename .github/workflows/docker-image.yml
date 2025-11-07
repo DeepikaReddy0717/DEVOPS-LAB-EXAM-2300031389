@@ -29,7 +29,7 @@ jobs:
           context: ./springbootexamproject
           file: ./springbootexamproject/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ansible-labexam-backend:latest:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ansible-labexam-backend:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
